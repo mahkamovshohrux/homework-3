@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import CusUser2
+from .models import CastnUser2
 from django.contrib.auth.admin import UserAdmin
 
 # Register your models here.
 class CustomUserAdmin(UserAdmin):
-    model = CusUser2
-    list_display = ("username", "is_staff", "is_active",)
+    model = CastnUser2
+    list_display = ("username", "is_staff", "is_active","roles")
     list_filter = ("username", "is_staff", "is_active",)
     fieldsets = (
         (None, {"fields": ("username", "password")}),
@@ -24,4 +24,4 @@ class CustomUserAdmin(UserAdmin):
     ordering = ("username",)
 
 
-admin.site.register((CusUser2), CustomUserAdmin)
+admin.site.register((CastnUser2), CustomUserAdmin)

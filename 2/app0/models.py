@@ -1,14 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
 # Create your models here.
-class CusUser2(AbstractUser):
-    ChOICE_ROLSE = (
-        (3, 'admin2'),
+class CastnUser2(AbstractUser):
+    CHOICE_ROLES = (
+        (3,'admin2'),
         (2,'staff2'),
-        (1,'user')
+        (1,'user2')
     )
-    rolse = models.PositiveIntegerField(choices=ChOICE_ROLSE,default=1)
+    roles = models.PositiveIntegerField(choices=CHOICE_ROLES,default=1)
 
     def __str__(self) -> str:
         return self.username
